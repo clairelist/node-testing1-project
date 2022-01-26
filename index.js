@@ -90,8 +90,9 @@ class Seasons {
   /**
    * [Exercise 5A] Seasons creates a seasons object
    */
-  constructor() {
+  constructor(initialSeason) {
     // ✨ initialize whatever properties are needed
+    this.initialSeason = initialSeason;
   }
 
   /**
@@ -108,8 +109,30 @@ class Seasons {
    */
   next() {
     // ✨ implement
-  }
+    //first, we need a numeric for each season !
+    //then at each tick of the counter, it returns a different season !
+
+      // ✨ implement
+      if (this.initialSeason === 0){
+        this.initialSeason++;
+        return 'spring';
+      } else if (this.initialSeason === 1){
+      return 'summer'; //remember to return !
+      } else if (this.initialSeason === 2){
+        return 'fall';
+      } else if (this.initialSeason === 3){
+        initialSeason++;
+        return 'winter'
+      } else if (this.initialSeason > 3){
+        this.initialSeason === 0;
+        return 'spring';
+      }
+  
 }
+}
+
+const year = new Seasons(0);
+console.log(year.next());
 
 class Car {
   /**
