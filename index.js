@@ -8,7 +8,15 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  const copyObj = Object.keys(obj)
+  .map(k => obj[k] = typeof obj[k] == 'string' ? obj[k]
+  .trim() : obj[k]); //the Object.keys() method iterates over an object! thanks stackoverflow !
+                     //my way also checks the typeof each key value and if not a string, simply returns thjat value !
+  
+  //return a new copy of the object!
+  return copyObj;
 }
+trimProperties({name: 'Me   ', otherVal: '   stringyfy meee ', thirdVal: 'etc   .  '});
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
@@ -20,6 +28,10 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  Object.keys(obj)
+  .map(k => obj[k] = typeof obj[k] == 'string' ? obj[k]
+  .trim() : obj[k]);
+  return obj;
 }
 
 /**
@@ -32,6 +44,7 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+  //I will come back to this one lol
 }
 
 class Counter {
@@ -41,6 +54,7 @@ class Counter {
    */
   constructor(initialNumber) {
     // ✨ initialize whatever properties are needed
+    this.initialNumber = initialNumber;
   }
 
   /**
@@ -57,8 +71,20 @@ class Counter {
    */
   countDown() {
     // ✨ implement
+    if (this.initialNumber === 0){
+      return 0;
+    } else {
+    return this.initialNumber--; //remember to return !
+    }
   }
 }
+
+// let calcr = new Counter(3);
+// console.log(calcr.countDown());
+// console.log(calcr.countDown());
+// console.log(calcr.countDown());
+// console.log(calcr.countDown());
+// console.log(calcr.countDown());
 
 class Seasons {
   /**
