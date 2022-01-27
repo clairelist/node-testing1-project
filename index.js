@@ -131,7 +131,7 @@ class Seasons {
 }
 }
 
-const year = new Seasons(0);
+const year = new Seasons(2);
 console.log(year.next());
 
 class Car {
